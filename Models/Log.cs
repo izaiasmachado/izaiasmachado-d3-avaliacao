@@ -1,4 +1,4 @@
-﻿namespace izaiasmachado_d3_avaliacao.Models
+namespace izaiasmachado_d3_avaliacao.Models
 {
     internal enum LogActionsEnum
     {
