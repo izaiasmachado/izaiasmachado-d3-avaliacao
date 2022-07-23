@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using izaiasmachado_d3_avaliacao.Models;
 
 namespace izaiasmachado_d3_avaliacao.Interfaces
 {
-    internal class ILog
+    internal interface ILog
     {
+        public void Create(User user);
     }
 }
