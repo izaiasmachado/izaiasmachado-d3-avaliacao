@@ -6,7 +6,7 @@ namespace izaiasmachado_d3_avaliacao.Models
         LOGOFF
     }
 
-    internal class Log : Base
+    internal sealed class Log : Base
     {
         private static string ActionToString(LogActionsEnum action)
         {
@@ -22,10 +22,21 @@ namespace izaiasmachado_d3_avaliacao.Models
         }
 
         private const string path = "database/logs.txt";
+        private static Log instance = null;
 
-        public Log()
+        private Log()
         {
             CreateFolderAndFile(path);
+        }
+
+        public static Log getInstance()
+        {
+            if (instance == null)
+            {
+                instance = new Log();
+            }
+
+            return instance;
         }
 
         private static string PrepareLine(User user, LogActionsEnum action, int hour, int year, int month, int day)

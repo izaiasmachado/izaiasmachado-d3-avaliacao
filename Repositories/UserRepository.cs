@@ -4,11 +4,12 @@ using System.Data.SqlClient;
 
 namespace izaiasmachado_d3_avaliacao.Repositories
 {
-    internal class UserRepository : IUser
+    internal static class UserRepository
     {
-        private readonly string conectionString = "Data source=IZAIAS-LAPTOP\\SQLEXPRESS01; initial catalog=izaiasmachado-d3-avaliacao; user id=izaias; pwd=cteds2022;";
+        public static User LoggedUser { get; set; }
+        private static readonly string conectionString = "Data source=IZAIAS-LAPTOP\\SQLEXPRESS01; initial catalog=izaiasmachado-d3-avaliacao; user id=izaias; pwd=cteds2022;";
 
-        public List<User> ReadAll()
+        public static List<User> ReadAll()
         {
             List<User> listUsers = new();
             string querySelectAllUsers = "SELECT IdUser, Name, Email, Password FROM Users";
@@ -42,7 +43,7 @@ namespace izaiasmachado_d3_avaliacao.Repositories
             return listUsers;
         }
 
-        public User GetUserByEmail(string email)
+        public static User GetUserByEmail(string email)
         {
             List<User> users = ReadAll();
 
@@ -55,6 +56,20 @@ namespace izaiasmachado_d3_avaliacao.Repositories
             }
 
             throw new NullReferenceException("User object is null.");
+        }
+
+        public static void TryToLogin(string givenEmail, string givenPassword) 
+        {
+            try
+            {
+                User user = GetUserByEmail(givenEmail);
+                user.ValidateGivenPassword(givenPassword);
+                LoggedUser = user;
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Invalid credentials");
+            }
         }
     }
 }

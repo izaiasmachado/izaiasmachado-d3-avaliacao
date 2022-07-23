@@ -1,5 +1,7 @@
 ﻿using izaiasmachado_d3_avaliacao.Repositories;
 using izaiasmachado_d3_avaliacao.Models;
+using izaiasmachado_d3_avaliacao.Interfaces;
+using izaiasmachado_d3_avaliacao.Views;
 
 namespace izaiasmachado_d3_avaliacao
 {
@@ -7,21 +9,12 @@ namespace izaiasmachado_d3_avaliacao
     {
         static void Main(string[] args)
         {
-            UserRepository userRepository = new UserRepository();
-            Log log = new Log();
+            IScreen menu = new MainScreen();
 
-            try
+            while (menu != null)
             {
-                User user = userRepository.GetUserByEmail("admin@email.com");
-                user.ValidateGivenPassword("admin123");
-                Console.WriteLine("Login feito!");
-                log.CreateLogin(user);
-                log.CreateLogoff(user);
-            } catch (Exception e)
-            {
-                Console.WriteLine("Credenciais incorretas");
+                menu = menu.show();
             }
-
         }
     }
 }
