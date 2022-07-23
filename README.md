@@ -16,8 +16,14 @@ Clone esse repositório com o auxílio do Visual Studio, suba o banco de dados e
 - [SQL Client](https://www.nuget.org/packages/System.Data.SqlClient)
 
 ## Implementação
+### Singleton para o Log
+Como o log de saída é gravado em um arquivo, existe o compartilhamento de um mesmo arquivo em várias partes do código. Portanto, o log foi implementado usando o singleton para que possa haver uma única instância de acesso global a [classe que realiza a escrita do log](./Models/Log.cs).
+
 ### Diagrama de Estados da Interface de Usuário
-A sucessão de telas da interface do usuário foi utilizada por meio do [state pattern](https://refactoring.guru/pt-br/design-patterns/state).
+A sucessão de telas da interface do usuário foi feita por meio do [state pattern](https://refactoring.guru/pt-br/design-patterns/state). Nesse sentido, foi criada uma interface [IScreen](./Interfaces/IScreen.cs) que define que todas as telas devem possuir um método show que retorna uma tela. Desse modo, é possível utilizar o polimorfismo para tratar todas as classes utilizando a interface implementada.
+
+A sucessão é feita na [classe principal](./Program.cs) utilizando um loop while, e só acaba quando uma tela for nula. A única classe que retorna telas nulas é a a [CloseSystemScreen](./Views/CloseSystemScreen.cs).
+
 ![Diagrama de Estados](https://i.ibb.co/9TybKLZ/state-diagram-screens-drawio-2.png)
 
 ## Especificações
