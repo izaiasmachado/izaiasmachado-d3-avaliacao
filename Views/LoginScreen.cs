@@ -14,8 +14,6 @@ namespace izaiasmachado_d3_avaliacao.Views
     {
         public IScreen show()
         {
-            Log log = new Log();
-
             IScreen returnMenu = new LoginScreen();
             String errorMessage = "Credenciais incorretas! Tente novamente";
             ErrorTryAgainScreen errorTryAgainMenu = new ErrorTryAgainScreen(returnMenu, errorMessage);
@@ -32,8 +30,6 @@ namespace izaiasmachado_d3_avaliacao.Views
             {
                 UserRepository.TryToLogin(givenEmail, givenPassword);
                 User user = UserRepository.LoggedUser;
-                log.CreateLogin(user);
-
                 return new LoggedScreen();
             }
             catch (Exception e)

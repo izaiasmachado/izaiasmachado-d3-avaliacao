@@ -14,11 +14,13 @@ namespace izaiasmachado_d3_avaliacao.Views
     {
         public IScreen show()
         {
-            Log log = new Log();
+            Log log = Log.getInstance();
             User user = UserRepository.LoggedUser;
             log.CreateLogoff(user);
 
+            Console.WriteLine("========== TELA DE LOGOFF ==========");
             Console.WriteLine("Usuário deslogado com sucesso!");
+            Console.WriteLine("");
             return new CloseSystemScreen();
         }
     }

@@ -13,6 +13,7 @@ namespace izaiasmachado_d3_avaliacao.Views
         {
             Console.WriteLine("========== FINALIZAÇÃO ==========");
             Console.WriteLine("Sistema encerrado com sucesso!");
+            Console.WriteLine("");
             return null;
         }
     }
