@@ -12,16 +12,29 @@ namespace izaiasmachado_d3_avaliacao.Views
 {
     internal class LogoffScreen : IScreen
     {
+        private IScreen returnScreen = new MainScreen();
+
+        public LogoffScreen()
+        {
+        }
+
+        public LogoffScreen(IScreen screen)
+        {
+            returnScreen = screen;
+        }
+
         public IScreen show()
         {
             User user = UserRepository.LoggedUser;
             Log log = Log.getInstance();
             log.CreateLogoff(user);
 
+            UserRepository.Logoff();
+
             Console.WriteLine("========== TELA DE LOGOFF ==========");
             Console.WriteLine("Usuário deslogado com sucesso!");
             Console.WriteLine("");
-            return new CloseSystemScreen();
+            return returnScreen;
         }
     }
 }

@@ -35,7 +35,7 @@ namespace izaiasmachado_d3_avaliacao.Models
             {
                 instance = new Log();
             }
-
+            
             return instance;
         }
 
