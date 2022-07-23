@@ -4,6 +4,7 @@ namespace izaiasmachado_d3_avaliacao.Interfaces
 {
     internal interface IUser
     {
-        User GetUserByEmail(string email);
+        public List<User> ReadAll();
+        public User GetUserByEmail(string email);
     }
 }

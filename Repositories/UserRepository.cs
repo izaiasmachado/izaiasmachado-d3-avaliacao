@@ -10,39 +10,38 @@ namespace izaiasmachado_d3_avaliacao.Repositories
 
         public List<User> ReadAll()
         {
-            List<User> listProducts = new();
+            List<User> listUsers = new();
+            string querySelectAllUsers = "SELECT IdUser, Name, Email, Password FROM Users";
 
-            using (SqlConnection con = new SqlConnection(conectionString))
+            using (SqlConnection connection = new SqlConnection(conectionString))
             {
-                string querySelectAll = "SELECT IdUser, Name, Email, Password FROM Users";
+                connection.Open();
 
-                con.Open();
+                SqlDataReader reader;
 
-                SqlDataReader rdr;
-
-                using (SqlCommand cmd = new(querySelectAll, con))
+                using (SqlCommand command = new(querySelectAllUsers, connection))
                 {
-                    rdr = cmd.ExecuteReader();
+                    reader = command.ExecuteReader();
 
-                    while (rdr.Read())
+                    while (reader.Read())
                     {
-
                         User user = new()
                         {
-                            IdUser = rdr[0].ToString(),
-                            Name = rdr["Name"].ToString(),
-                            Email = rdr["Email"].ToString(),
-                            Password = rdr["Password"].ToString()
+                            IdUser = reader["IdUser"].ToString(),
+                            Name = reader["Name"].ToString(),
+                            Email = reader["Email"].ToString(),
+                            Password = reader["Password"].ToString()
                         };
 
-                        listProducts.Add(user);
+                        listUsers.Add(user);
 
                     }
                 }
             }
 
-            return listProducts;
+            return listUsers;
         }
+
         public User GetUserByEmail(string email)
         {
             List<User> users = ReadAll();
