@@ -14,7 +14,6 @@ namespace izaiasmachado_d3_avaliacao.Views
     {
         public IScreen show()
         {
-            Log log = Log.getInstance();
             IScreen returnMenu = new MainMenuScreen();
             String errorMessage = "Opção Inválida! Tente novamente";
             ErrorTryAgainScreen errorTryAgainMenu = new ErrorTryAgainScreen(returnMenu, errorMessage);

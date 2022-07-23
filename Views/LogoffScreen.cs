@@ -14,8 +14,8 @@ namespace izaiasmachado_d3_avaliacao.Views
     {
         public IScreen show()
         {
-            Log log = Log.getInstance();
             User user = UserRepository.LoggedUser;
+            Log log = Log.getInstance();
             log.CreateLogoff(user);
 
             Console.WriteLine("========== TELA DE LOGOFF ==========");

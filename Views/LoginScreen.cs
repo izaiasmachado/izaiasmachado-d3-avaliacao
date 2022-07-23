@@ -30,6 +30,10 @@ namespace izaiasmachado_d3_avaliacao.Views
             {
                 UserRepository.TryToLogin(givenEmail, givenPassword);
                 User user = UserRepository.LoggedUser;
+                
+                Log log = Log.getInstance();
+                log.CreateLogin(user);
+
                 return new LoggedScreen();
             }
             catch (Exception e)
