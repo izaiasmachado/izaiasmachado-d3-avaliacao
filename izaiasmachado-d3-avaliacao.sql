@@ -1,9 +1,9 @@
 -- Cria o banco de dados da avaliação
-CREATE DATABASE [D3-Avaliacao];
+CREATE DATABASE [izaiasmachado-d3-avaliacao];
 GO
 
 -- Seleciona o banco de dados
-USE [D3-Avaliacao];
+USE [izaiasmachado-d3-avaliacao];
 GO
 
 -- Cria a tabela Users com os campos solicitados

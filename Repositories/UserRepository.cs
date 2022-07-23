@@ -6,8 +6,7 @@ namespace izaiasmachado_d3_avaliacao.Repositories
 {
     internal class UserRepository : IUser
     {
-        private readonly string conectionString = "Data source=IZAIAS-LAPTOP\\SQLEXPRESS01; initial catalog=D3-Avaliacao; user id=izaias; pwd=cteds2022;";
-
+        private readonly string conectionString = "Data source=IZAIAS-LAPTOP\\SQLEXPRESS01; initial catalog=izaiasmachado-d3-avaliacao; user id=izaias; pwd=cteds2022;";
 
         public List<User> ReadAll()
         {
