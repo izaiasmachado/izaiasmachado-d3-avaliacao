@@ -10,10 +10,15 @@ namespace izaiasmachado_d3_avaliacao.Models
         public string Password { set; get; } = string.Empty;
 
         public void ValidateGivenPassword(string password)
-        {
-            if (Password == password) return;
-
-            throw new Exception("Incorrect given password");
+        {       
+            try
+            {
+                BCrypt.Net.BCrypt.Verify(password, Password);
+            } 
+            catch (Exception e)
+            {
+                throw new Exception("Incorrect given password");
+            }
         }
     }
 }
