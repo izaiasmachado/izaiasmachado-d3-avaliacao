@@ -9,7 +9,6 @@ namespace izaiasmachado_d3_avaliacao.Models
         public string Email { set; get; } = string.Empty;
         public string Password { set; get; } = string.Empty;
 
-
         public void ValidateGivenPassword(string password)
         {
             if (Password == password) return;

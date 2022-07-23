@@ -8,16 +8,19 @@ namespace izaiasmachado_d3_avaliacao
         static void Main(string[] args)
         {
             UserRepository userRepository = new UserRepository();
+            Log log = new Log();
 
             try
             {
                 User user = userRepository.GetUserByEmail("admin@email.com");
                 user.ValidateGivenPassword("admin123");
                 Console.WriteLine("Login feito!");
+                log.Create(user);
             } catch (Exception e)
             {
                 Console.WriteLine("Credenciais incorretas");
             }
+
         }
     }
 }
