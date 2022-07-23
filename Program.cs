@@ -9,7 +9,7 @@ namespace izaiasmachado_d3_avaliacao
     {
         static void Main(string[] args)
         {
-            IScreen menu = new MainMenuScreen();
+            IScreen menu = new MainScreen();
 
             while (menu != null)
             {

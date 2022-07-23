@@ -2,7 +2,7 @@
 
 namespace izaiasmachado_d3_avaliacao.Views
 {
-    internal class MainMenuScreen : IScreen
+    internal class MainScreen : IScreen
     {
         public IScreen show()
         {
@@ -11,7 +11,7 @@ namespace izaiasmachado_d3_avaliacao.Views
             Console.WriteLine("[2] Cancelar ");
             Console.Write("Digite a opção escolhida: ");
 
-            IScreen returnMenu = new MainMenuScreen();
+            IScreen returnMenu = new MainScreen();
             String errorMessage = "Opção Inválida! Tente novamente";
             ErrorTryAgainScreen errorTryAgainMenu = new ErrorTryAgainScreen(returnMenu, errorMessage);
 
