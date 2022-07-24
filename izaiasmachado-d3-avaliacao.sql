@@ -10,7 +10,7 @@ GO
 CREATE TABLE Users (
 	IdUser					VARCHAR(255) NOT NULL UNIQUE,
 	[Name]					VARCHAR(255) NOT NULL,
-	[Email]				    VARCHAR(255) NOT NULL,
+	[Email]				    VARCHAR(255) NOT NULL UNIQUE,
 	[Password]				TEXT NOT NULL
 );
 GO
