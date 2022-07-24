@@ -1,6 +1,4 @@
-﻿using izaiasmachado_d3_avaliacao.Interfaces;
-
-namespace izaiasmachado_d3_avaliacao.Models
+﻿namespace izaiasmachado_d3_avaliacao.Models
 {
     internal class User
     {

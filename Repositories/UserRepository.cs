@@ -1,5 +1,4 @@
-﻿using izaiasmachado_d3_avaliacao.Interfaces;
-using izaiasmachado_d3_avaliacao.Models;
+﻿using izaiasmachado_d3_avaliacao.Models;
 using System.Data.SqlClient;
 
 namespace izaiasmachado_d3_avaliacao.Repositories
