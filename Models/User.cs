@@ -15,7 +15,7 @@ namespace izaiasmachado_d3_avaliacao.Models
             {
                 BCrypt.Net.BCrypt.Verify(password, Password);
             } 
-            catch (Exception e)
+            catch (Exception)
             {
                 throw new Exception("Incorrect given password");
             }

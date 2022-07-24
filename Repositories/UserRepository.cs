@@ -58,7 +58,7 @@ namespace izaiasmachado_d3_avaliacao.Repositories
             throw new NullReferenceException("User object is null.");
         }
 
-        public static void TryToLogin(string givenEmail, string givenPassword)
+        public static void TryLogin(string givenEmail, string givenPassword)
         {
             try
             {
@@ -66,7 +66,7 @@ namespace izaiasmachado_d3_avaliacao.Repositories
                 user.ValidateGivenPassword(givenPassword);
                 LoggedUser = user;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw new Exception("Invalid credentials");
             }

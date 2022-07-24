@@ -28,7 +28,7 @@ namespace izaiasmachado_d3_avaliacao.Views
 
             try
             {
-                UserRepository.TryToLogin(givenEmail, givenPassword);
+                UserRepository.TryLogin(givenEmail, givenPassword);
                 User user = UserRepository.LoggedUser;
                 
                 Logger logger = Logger.getInstance();
@@ -36,7 +36,7 @@ namespace izaiasmachado_d3_avaliacao.Views
 
                 return new LoggedScreen();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return errorTryAgainMenu;
             }

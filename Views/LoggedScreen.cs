@@ -40,7 +40,7 @@ namespace izaiasmachado_d3_avaliacao.Views
                         return errorTryAgainMenu;
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return errorTryAgainMenu;
             }
