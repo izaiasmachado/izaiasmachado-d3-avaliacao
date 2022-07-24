@@ -35,8 +35,7 @@ namespace izaiasmachado_d3_avaliacao.Views
                     case 1:
                         return new LogoffScreen();
                     case 2:
-                        IScreen nextScreen = new CloseSystemScreen();
-                        return new LogoffScreen(nextScreen);
+                        return new CloseSystemScreen();
                     default:
                         return errorTryAgainMenu;
                 }
