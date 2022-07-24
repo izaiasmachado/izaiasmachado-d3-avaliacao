@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using izaiasmachado_d3_avaliacao.Interfaces;
 using izaiasmachado_d3_avaliacao.Repositories;
 using izaiasmachado_d3_avaliacao.Models;
-using izaiasmachado_d3_avaliacao.Views;
+using izaiasmachado_d3_avaliacao.Utils;
 
 namespace izaiasmachado_d3_avaliacao.Views
 {
@@ -31,8 +31,8 @@ namespace izaiasmachado_d3_avaliacao.Views
                 UserRepository.TryToLogin(givenEmail, givenPassword);
                 User user = UserRepository.LoggedUser;
                 
-                Log log = Log.getInstance();
-                log.CreateLogin(user);
+                Logger logger = Logger.getInstance();
+                logger.CreateLogin(user);
 
                 return new LoggedScreen();
             }
