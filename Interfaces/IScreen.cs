@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace izaiasmachado_d3_avaliacao.Interfaces
+﻿namespace izaiasmachado_d3_avaliacao.Interfaces
 {
     internal interface IScreen
     {

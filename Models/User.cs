@@ -1,6 +1,4 @@
-﻿using izaiasmachado_d3_avaliacao.Interfaces;
-
-namespace izaiasmachado_d3_avaliacao.Models
+﻿namespace izaiasmachado_d3_avaliacao.Models
 {
     internal class User
     {
@@ -15,7 +13,7 @@ namespace izaiasmachado_d3_avaliacao.Models
             {
                 BCrypt.Net.BCrypt.Verify(password, Password);
             } 
-            catch (Exception e)
+            catch (Exception)
             {
                 throw new Exception("Incorrect given password");
             }

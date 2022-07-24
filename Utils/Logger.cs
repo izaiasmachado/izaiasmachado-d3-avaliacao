@@ -1,4 +1,7 @@
-namespace izaiasmachado_d3_avaliacao.Models
+using izaiasmachado_d3_avaliacao.Models;
+using izaiasmachado_d3_avaliacao.Interfaces;
+
+namespace izaiasmachado_d3_avaliacao.Utils
 {
     internal enum LogActionsEnum
     {
@@ -6,7 +9,7 @@ namespace izaiasmachado_d3_avaliacao.Models
         LOGOFF
     }
 
-    internal sealed class Log : Base
+    internal sealed class Logger : ILogger
     {
         private static string ActionToString(LogActionsEnum action)
         {
@@ -22,18 +25,18 @@ namespace izaiasmachado_d3_avaliacao.Models
         }
 
         private const string path = "database/logs.txt";
-        private static Log instance = null;
+        private static Logger instance = null;
 
-        private Log()
+        private Logger()
         {
             CreateFolderAndFile(path);
         }
 
-        public static Log getInstance()
+        public static Logger getInstance()
         {
             if (instance == null)
             {
-                instance = new Log();
+                instance = new Logger();
             }
             
             return instance;
@@ -67,6 +70,21 @@ namespace izaiasmachado_d3_avaliacao.Models
         public void CreateLogoff(User user)
         {
             Create(user, LogActionsEnum.LOGOFF);
-        }        
+        }
+
+        public static void CreateFolderAndFile(string path)
+        {
+            string folder = path.Split("/")[0];
+
+            if (!Directory.Exists(folder))
+            {
+                Directory.CreateDirectory(folder);
+            }
+
+            if (!File.Exists(path))
+            {
+                File.Create(path).Close();
+            }
+        }
     }
 }

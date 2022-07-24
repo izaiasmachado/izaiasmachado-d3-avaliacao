@@ -2,7 +2,7 @@
 
 namespace izaiasmachado_d3_avaliacao.Interfaces
 {
-    internal interface ILog
+    internal interface ILogger
     {
         public void CreateLogin(User user);
         public void CreateLogoff(User user);
