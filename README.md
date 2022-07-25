@@ -24,7 +24,7 @@ A sucessão de telas da interface do usuário foi feita por meio do [state patte
 
 A sucessão é feita na [classe principal](./Program.cs) utilizando um loop while, e só acaba quando uma tela for nula. A única classe que retorna telas nulas é a a [CloseSystemScreen](./Views/CloseSystemScreen.cs).
 
-![Diagrama de Estados](https://i.ibb.co/cyfN5WN/state-diagram-screens.png)
+![Diagrama de Estados](https://i.ibb.co/85TLRzf/state-diagram-screens-1.png)
 
 ## Especificações
 - Ao executar a aplicação, deverá ser apresentada uma interface de console com um menu e as seguintes opções: acessar e cancelar.
